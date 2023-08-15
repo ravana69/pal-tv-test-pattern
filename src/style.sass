@@ -1,0 +1,189 @@
+$screenW: 100vw
+$screenH: $screenW * 0.75
+$circleSize: $screenH * 0.875
+
+/* For thin horizontal lines on sides */
+$lineLcolor1: rgb(184,90,122)
+$lineLcolor2: rgb(60,154,122)
+$lineRcolor1: rgb(122,100,233)
+$lineRcolor2: rgb(122,144,11)
+$linesL: repeating-linear-gradient($lineLcolor1, $lineLcolor1 0.35%, $lineLcolor2 0.35%, $lineLcolor2 0.7%)
+$linesR: repeating-linear-gradient($lineRcolor1, $lineRcolor1 0.35%, $lineRcolor2 0.35%, $lineRcolor2 0.7%)
+
+/* For white grid */
+$gridStopH: 0.4%
+$gridStopV: 0.52%
+$gridH: repeating-linear-gradient(#fff, #fff $gridStopH, transparent $gridStopH, transparent 7.3%)
+$gridV: repeating-linear-gradient(90deg, #fff, #fff $gridStopV, transparent $gridStopV, transparent 5.47%)
+$grid: $gridH, $gridV
+
+body
+  margin: 0
+  overflow-x: hidden
+  
+.container
+  background-color: rgb(122,122,122)
+  position: relative
+  width: $screenW
+  height: $screenH
+
+/* Thin horizontal lines on sides */
+.linesL, .linesR
+  background-repeat: no-repeat
+  background-size: 100% 87.5%
+  position: absolute
+  top: 0
+  height: 100%
+  width: 9%
+.linesL
+  background-image: $linesL
+  background-position: 0% 50%
+  left: 0
+.linesR
+  background-image: $linesR
+  background-position: 100% 50%
+  right: 0
+  
+.screen
+  background-image: $grid
+  background-repeat: no-repeat
+  background-position: 3.2vw 1.8vw
+  display: flex
+  display: -webkit-flex
+  justify-content: center
+  align-items: center
+  -webkit-justify-content: center
+  -webkit-align-items: center
+  position: relative
+  width: $screenW
+  height: $screenH
+  
+.circle
+  background: #fff
+  border-radius: 50%
+  display: flex
+  display: -webkit-flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
+  -webkit-flex-direction: column
+  -webkit-justify-content: flex-end
+  -webkit-align-items: center
+  overflow: hidden
+  position: relative
+  width: $circleSize
+  height: $circleSize
+
+/* Borders */
+.border-h
+  background-image: repeating-linear-gradient(90deg, #000, #000 4.94%, #fff 4.94%, #fff 10.92%)
+  background-position: -7.3vw 0
+  position: absolute
+  left: 0
+  width: 100%
+  height: 2.4%
+.border-v
+  background-image: repeating-linear-gradient(#fff, #fff 2.4%, #000 2.4%, #000 10.2%, #fff 10.2%, #fff 14.55%)
+  position: absolute
+  top: 0
+  width: 3.3%
+  height: 100%
+.top
+  top: 0
+.bottom
+  bottom: 0
+.left
+  left: 0
+.right
+  right: 0
+
+/* 6 rectangles, 8 colors; tallest ones are gradients */
+.rect
+  position: absolute
+.teal-pink
+  background-image: linear-gradient(rgb(34,152,124), rgb(34,152,124) 50%, rgb(191,89,121) 50%, rgb(191,89,121))
+  left: 9.1%
+  top: 10.1%
+  width: 5.05%
+  height: 79.95%
+.ltblueL
+  background: rgb(67,128,210)
+  left: 14.1%
+  top: 10.1%
+  width: 5.5%
+  height: 14.3%
+.ltblueR
+  background: rgb(67,128,210)
+  right: 14.4%
+  top: 10.1%
+  width: 5.3%
+  height: 14.3%
+.brownL
+  background: rgb(163,119,42)
+  left: 14.1%
+  bottom: 9.95%
+  width: 5.5%
+  height: 14.3%
+.brownR
+  background: rgb(163,119,42)
+  right: 14.4%
+  bottom: 10%
+  width: 5.3%
+  height: 14.23%
+.olive-periwinkle
+  background-image: linear-gradient(rgb(123,141,37), rgb(123,141,37) 50%, rgb(113,110,228) 50%, rgb(113,110,228))
+  right: 9.3%
+  top: 10.1%
+  width: 5.1%
+  height: 79.95%
+
+/* Shapes inside circle */
+.row-1
+  background-color: #000
+  width: 33%
+  height: 8.33%
+.row-2
+  background-image: linear-gradient(90deg, #000, #000 25%, #fff 25%, 28.75%, #000 28.75%, #000 30%, #fff 30%, #fff 75%, #000 75%, #000)
+  height: 8.33%
+  width: 100%
+.row-3
+  background-image: repeating-linear-gradient(90deg, #000, #000 5.75%, #999 5.75%, #999 11.50%)
+  background-position: 2.55vw 0
+  height: 8.33%
+  width: 100%
+.row-4
+  background-image: linear-gradient(90deg, rgb(196, 187, 47), rgb(196, 187, 47) 16.66%, rgb(0, 192, 192) 16.6%, rgb(0, 192, 192) 33.3%, rgb(0, 189, 46) 33.3%, rgb(0, 189, 46) 50%, rgb(197, 33, 186) 50%, rgb(197, 33, 186) 66.6%, rgb(202, 0, 4) 66.6%, rgb(202, 0, 4) 83.3%, rgb(0, 42, 186) 83.3%, rgb(0, 42, 186))
+  height: 16.66%
+  width: 100%
+.row-5
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 4%, #fff 4%, #fff 4.75%, transparent 4.75%, transparent 8.3%), linear-gradient(#000, #000 47%, #fff 47%, #fff 53%, #000 53%, #000)
+  height: 8.33%
+  width: 100%
+  div
+    background-image: linear-gradient(90deg, transparent, transparent 46%, #fff 46%, #fff 54%, transparent 54%, transparent), linear-gradient(#000, #000 49%, #fff 49%, #fff 51%, #000 51%, #000)
+    position: absolute
+    left: 46.25%
+    top: 37.5%
+    width: 7.5%
+    height: 25%
+// for row 6, percentage increments from 7–25 are 2%
+// 26–41 are 0.75%
+// 41–57 are 0.50%
+// 57–75 are 0.33%
+// 75-92 are 0.25%
+.row-6
+  background-image: linear-gradient(90deg, #000, #000 7%, #fff 9%, #000 11%, #fff 13%, #000 15%, #fff 17%, #000 19%, #fff 21%, #000 23%, #fff 25%, #000 26%, #fff 26.75%, #000 27.5%, #fff 28.25%, #000 29%, #fff 29.75%, #000 30.5%, #fff 31.25%, #000 32%, #fff 32.75%, #000 33.5%, #fff 34.25%, #000 35%, #fff 35.75%, #000 36.5%, #fff 37.25%, #000 38%, #fff 38.75%, #000 39.5%, #fff 40.25%, #000 41%, #fff 41.5%, #000 42%, #fff 42.5%, #000 43%, #fff 43.5%, #000 44%, #fff 44.5%, #000 45%, #fff 45.5%, #000 46%, #fff 46.5%, #000 47%, #fff 47.5%, #000 48%, #fff 48.5%, #000 49%, #fff 49.5%, #000 50%, #fff 50.5%, #000 51%, #fff 51.5%, #000 52%, #fff 52.5%, #000 53%, #fff 53.5%, #000 54%, #fff 54.5%, #000 55%, #fff 55.5%, #000 56%, #fff 56.5%, #000 57%, #fff 57.33%, #000 57.66%, #fff 58%, #000 58.33%, #fff 58.66%, #000 59%, #fff 59.33%, #000 59.66%, #fff 60%, #000 60.33%, #fff 60.66%, #000 61%, #fff 61.33%, #000 61.66%, #fff 62%, #000 62.33%, #fff 62.66%, #000 63%, #fff 63.33%, #000 63.66%, #fff 64%, #000 64.33%, #fff 64.66%, #000 65%, #fff 65.33%, #000 65.66%, #fff 66%, #000 66.33%, #fff 66.66%, #000 67%, #fff 67.33%, #000 67.66%, #fff 68%, #000 68.33%, #fff 68.66%, #000 69%, #fff 69.33%, #000 69.66%, #fff 70%, #000 70.33%, #fff 70.66%, #000 71%, #fff 71.33%, #000 71.66%, #fff 72%, #000 72.33%, #fff 72.66%, #000 73%, #fff 73.33%, #000 73.66%, #fff 74%, #000 74.33%, #fff 74.66%, #000 75%, #fff 75.25%, #000 75.50%, #fff 75.75%, #000 76%, #fff 76.25%, #000 76.5%, #fff 76.75%, #000 77%, #fff 77.25%, #000 77.5%, #fff 77.75%, #000 78%, #fff 78.25%, #000 78.5%, #fff 78.75%, #000 79%, #fff 79.25%, #000 79.5%, #fff 79.75%, #000 80%, #fff 80.25%, #000 80.5%, #fff 80.75%, #000 81%, #fff 81.25%, #000 81.5%, #fff 81.75%, #000 82%, #fff 82.25%, #000 82.5%, #fff 82.75%, #000 83%, #fff 83.25%, #000 83.5%, #fff 83.75%, #000 84%, #fff 84.25%, #000 84.5%, #fff 84.75%, #000 85%, #fff 85.25%, #000 85.5%, #fff 85.75%, #000 86%, #fff 86.25%, #000 86.5%, #fff 86.75%, #000 87%, #fff 87.25%, #000 87.5%, #fff 87.75%, #000 88%, #fff 88.25%, #000 88.5%, #fff 88.75%, #000 89%, #fff 89.25%, #000 89.5%, #fff 89.75%, #000 90%, #fff 90.25%, #000 90.5%, #fff 90.75%, #000 91%, #fff 91.25%, #000 91.5%, #fff 91.75%, #000 92%)
+  width: 100%
+  height: 16.66%
+.row-7
+  background-image: linear-gradient(90deg, #000, #000 16.66%, #333 16.6%, #333 33.3%, #666 33.3%, #666 50%, #999 50%, #999 66.6%, #ccc 66.6%, #ccc 83.3%, #fff 83.3%, #fff)
+  height: 8.33%
+  width: 100%
+.row-8
+  background-image: linear-gradient(90deg, #000, #000 8.5%, #fff 8.5%, #fff 10%, #000 10%, #000)
+  height: 8.33%
+  width: 50%
+.row-9
+  background-image: linear-gradient(90deg, rgb(196, 187, 47), rgb(196, 187, 47) 46.25%, rgb(202, 0, 4) 46.25%, rgb(202, 0, 4) 53.75%, rgb(196, 187, 47) 53.75%, rgb(196, 187, 47))
+  width: 100%
+  height: 12.5%

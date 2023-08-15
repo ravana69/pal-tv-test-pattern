@@ -1,0 +1,19 @@
+.container
+  .linesL
+  .linesR
+  .screen
+    .border-v.left
+    .border-h.top
+    .border-h.bottom
+    .border-v.right
+    .rect.teal-pink
+    .rect.ltblueL
+    .rect.ltblueR
+    .rect.olive-periwinkle
+    .rect.brownL
+    .rect.brownR
+    .circle
+      -(1..9).each do |i|
+        %div{:class => "row-#{i}"}
+          - if i == 5
+            %div
